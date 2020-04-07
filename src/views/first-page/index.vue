@@ -1,11 +1,12 @@
 <template>
-  <div class="abc">
-    <div class="def">
-      1111
-    </div>
+  <div class="container">
+    {{ name }}
+    <input type="button" name="改变name1" value="改变name1" @click="changeName">
+    <input type="button" name="改变name2" value="改变name2" @click="changeName2">
   </div>
 </template>
 <script>
+import { mapGetters, mapActions } from 'vuex';
 export default {
   name: '',
   components: {},
@@ -14,6 +15,9 @@ export default {
     };
   },
   computed: {
+    ...mapGetters([
+      'name'
+    ]),
     info() {
       return process;
       // return process.env.NODE_ENV;
@@ -25,13 +29,20 @@ export default {
     console.log(process.features);
     console.log(process.env);
   },
-  methods: {}
+  methods: {
+    ...mapActions({
+      setname: 'user/setname'
+    }),
+    changeName() {
+      this.setname('yuezengchen');
+      // console.log(111);
+    },
+    changeName2() {
+      this.$store.dispatch('user/setname', 'zhangfei');
+    }
+  }
 };
 </script>
 <style scoped lang="scss">
-.abc{
-  .def{
-    color: red;
-  }
-}
+
 </style>

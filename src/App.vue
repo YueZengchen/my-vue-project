@@ -12,11 +12,7 @@ export default {
 
     };
   },
-  methods: {
-    testFn() {
-      console.log(111);
-    }
-  }
+  methods: {}
 };
 </script>
 
