@@ -35,7 +35,7 @@ export default {
     }),
     changeName() {
       this.setname('yuezengchen');
-      // console.log(111);
+      console.log(111);
     },
     changeName2() {
       this.$store.dispatch('user/setname', 'zhangfei');
