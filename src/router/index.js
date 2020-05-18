@@ -9,6 +9,16 @@ export const route = [
     // component: Layout
     component: () => import('@/views/first-page/index'),
     name: 'first-page'
+  },
+  {
+    path: '/test',
+    component: () => import('@/views/test/index'),
+    name: 'test'
+  },
+  {
+    path: '*',
+    redirect: '/404',
+    hidden: true
   }
 ];
 const createRouter = () => new Router({
