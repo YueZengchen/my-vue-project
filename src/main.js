@@ -5,6 +5,8 @@ import Cookies from 'js-cookie';
 import 'normalize.css/normalize.css'; // 一种CSS reset的替代方案
 
 import Element from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
 import '@/styles/index.scss'; // global css
 
 import App from './App.vue';
