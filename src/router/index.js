@@ -6,22 +6,37 @@ Vue.use(Router);
 export const route = [
   {
     path: '/',
-    // component: Layout
-    component: () => import('@/views/first-page/index'),
-    name: 'first-page'
+    component: () => import('@/layout'),
+    children: [
+      {
+        path: 'dashboard',
+        name: 'dashboard',
+        component: () => import('@/views/dashboard')
+      },
+      {
+        path: 'test',
+        name: 'test',
+        component: () => import('@/views/test')
+      }
+    ]
   },
   {
-    path: '/test',
-    component: () => import('@/views/test/index'),
-    name: 'test'
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login')
+  },
+  {
+    path: '/404',
+    name: 'test',
+    component: () => import('@/views/404')
   },
   {
     path: '*',
-    redirect: '/404',
-    hidden: true
+    redirect: '/404'
   }
 ];
 const createRouter = () => new Router({
+  mode: 'history',
   routes: route
 });
 
