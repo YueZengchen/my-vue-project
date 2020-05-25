@@ -5,7 +5,7 @@
         <el-input v-model.trim="loginForm.userName" />
       </el-form-item>
       <el-form-item label="密码" prop="passWord">
-        <el-input v-model.trim="loginForm.passWord" @keyup.enter.native="onLogin" />
+        <el-input v-model.trim="loginForm.passWord" type="password" @keyup.enter.native="onLogin" />
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onLogin">登录</el-button>
@@ -17,7 +17,6 @@
 </template>
 <script>
 import { mapActions } from 'vuex';
-import { login } from '@/api/login';
 
 export default {
   name: 'Login',
@@ -38,20 +37,19 @@ export default {
   mounted() {},
   methods: {
     ...mapActions({
-      setname: 'user/setname'
+      login: 'auth/login'
     }),
     onLogin() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           const params = this.loginForm;
-          login(params).then(res => {
-            // 登录成功回调 存储用户信息
+          this.login(params).then(_ => {
+            // 登录成功回调
             this.$router.push('/dashboard');
-            this.setname(this.loginForm.userName);
-          }).catch(_ => {
+          }).catch(error => {
+            throw new Error(error);
             // 登录失败处理
-            throw new Error('用户名或密码错误');
-            // console.log(error);
+            // throw new Error('用户名或密码错误');
           });
         } else {
           return false;

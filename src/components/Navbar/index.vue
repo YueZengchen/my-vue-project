@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      欢迎用户:{{ name }}
+      欢迎用户:{{ userInfo.name }} &nbsp; 性别:{{ userInfo.sex }} &nbsp; 年龄{{ userInfo.age }}
     </header>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     ...mapState({
-      name: state => state.user.name
+      userInfo: state => state.auth.userInfo
     })
   },
   mounted() {},
