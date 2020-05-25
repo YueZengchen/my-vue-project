@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 export default {
   name: '',
   components: {},
@@ -15,7 +15,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
+    ...mapState([
       'name'
     ]),
     info() {
@@ -24,14 +24,6 @@ export default {
     }
   },
   mounted() {
-    // console.log(process);
-    // console.log(process.argv);
-    // console.log(process.features);
-    // console.log(process.env);
-    // setTimeout(_ => {
-    //   console.log(_);
-    //   console.log('我在两秒前执行的');
-    // }, 2000);
     function Star(name, age) {
       this.name = name;
       this.age = age;

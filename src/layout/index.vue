@@ -17,11 +17,11 @@ export default {
   },
   computed: {
     ...mapState({
-      name: state => state.user.name
+      userInfo: state => state.auth.userInfo
     })
   },
   mounted() {
-    if (!this.name) {
+    if (!this.userInfo) {
       this.$router.push('/login');
     }
   },

@@ -3,9 +3,14 @@ export const get = (url, params) => {
     switch (url) {
       case '登录':
         if (params.userName === 'admin' && params.passWord === '123456') {
-          resolve();
+          const result = {
+            name: 'yuezengchen',
+            sex: 'man',
+            age: 26
+          };
+          resolve(result);
         } else {
-          reject();
+          reject('账号密码错误');
         }
         break;
       default:

@@ -7,17 +7,18 @@ export const route = [
   {
     path: '/',
     component: () => import('@/layout'),
+    redirect: '/dashboard',
     children: [
       {
         path: 'dashboard',
         name: 'dashboard',
         component: () => import('@/views/dashboard')
-      },
-      {
-        path: 'test',
-        name: 'test',
-        component: () => import('@/views/test')
       }
+      // {
+      //   path: 'test',
+      //   name: 'test',
+      //   component: () => import('@/views/test')
+      // }
     ]
   },
   {
