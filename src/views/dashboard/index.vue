@@ -1,13 +1,13 @@
 <template>
   <div>
-    <navbar />
+    dashboard
   </div>
 </template>
 <script>
-import Navbar from '@/components/Navbar';
+
 export default {
   name: '',
-  components: { Navbar },
+  components: { },
   data() {
     return {
     };
