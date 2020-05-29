@@ -48,16 +48,11 @@ export default {
             this.$router.push('/dashboard');
           }).catch(error => {
             throw new Error(error);
-            // 登录失败处理
-            // throw new Error('用户名或密码错误');
           });
         } else {
           return false;
         }
       });
-    },
-    testFn() {
-      console.log('test');
     }
   }
 };

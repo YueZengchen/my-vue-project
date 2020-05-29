@@ -1,16 +1,28 @@
 <template>
-  <div>
-    test
-    <router-view />
-    test
-  </div>
+  <el-container>
+    <el-header>
+      <navbar />
+    </el-header>
+    <el-container>
+      <el-aside>
+        menu
+      </el-aside>
+      <el-main>
+        <router-view />
+      </el-main>
+    </el-container>
+    <el-footer>
+      footer
+    </el-footer>
+  </el-container>
 </template>
 <script>
 import { mapState } from 'vuex';
+import Navbar from '@/components/Navbar';
 
 export default {
   name: '',
-  components: {},
+  components: { Navbar },
   data() {
     return {
     };
@@ -20,11 +32,7 @@ export default {
       userInfo: state => state.auth.userInfo
     })
   },
-  mounted() {
-    if (!this.userInfo) {
-      this.$router.push('/login');
-    }
-  },
+  mounted() {},
   methods: {}
 };
 </script>

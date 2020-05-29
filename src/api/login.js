@@ -1,2 +1,2 @@
-import { get } from '@/utils/request';
-export const login = params => get('登录', params);
+import { post } from '@/utils/request';
+export const login = params => post('/login', params);
