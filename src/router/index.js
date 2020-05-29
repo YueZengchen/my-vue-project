@@ -1,6 +1,6 @@
+import { getUserInfo } from '@/utils/auth';
 import Vue from 'vue';
 import Router from 'vue-router';
-
 Vue.use(Router);
 
 export const route = [
@@ -42,5 +42,11 @@ const createRouter = () => new Router({
 });
 
 const router = createRouter();
+router.beforeEach((to, from, next) => {
+  if (getUserInfo() == null && to.path !== '/login') {
+    next(`/login?redirect=${to.path}`);
+  }
+  next();
+});
 
 export default router;

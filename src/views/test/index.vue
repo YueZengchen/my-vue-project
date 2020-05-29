@@ -28,8 +28,6 @@ export default {
       },
       set: function(newName) {
         textEle.innerText = newName;
-        console.log(obj);
-        console.log('set');
       }
     });
     nameEle.onkeyup = function() {
