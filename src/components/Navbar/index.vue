@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="nav-header">
     <header>
       欢迎用户:{{ userInfo.userName }} &nbsp; 性别:{{ userInfo.sex }} &nbsp; 年龄{{ userInfo.age }}
     </header>
@@ -32,4 +32,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+// .nav-header{
+//   background-color: #409EFF;
+// }
 </style>
