@@ -2,7 +2,7 @@ import { login } from '@/api/login';
 import { getUserInfo, setUserInfo } from '@/utils/auth';
 // 带命名空间的模块
 const state = {
-  userInfo: getUserInfo()
+  userInfo: getUserInfo() == null ? null : JSON.parse(getUserInfo())
 };
 
 const mutations = {

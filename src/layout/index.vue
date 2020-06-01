@@ -1,8 +1,6 @@
 <template>
   <el-container>
-    <el-header>
-      <navbar />
-    </el-header>
+    <navbar />
     <el-container>
       <el-aside>
         menu
@@ -37,4 +35,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.nav-header{
+  background-color: #409EFF;
+}
 </style>

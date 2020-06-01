@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="loginBg">
+      这是一个测试系统
+    </div>
     <el-form ref="loginForm" :model="loginForm" label-width="80px" :rules="rules">
       <el-form-item label="用户名" prop="userName">
         <el-input v-model.trim="loginForm.userName" />
@@ -9,7 +12,6 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onLogin">登录</el-button>
-        <el-button>取消</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -59,7 +61,20 @@ export default {
 </script>
 <style scoped lang="scss">
 .container{
-  width: 500px;
-  margin: 100px auto 0;
+  display: flex;
+  height: 100%;
+  min-height: 700px;
+
+  .loginBg{
+    width: 900px;
+    background: url('../../static/img/loginBg.jpg') no-repeat;
+    background-size: 100% 100%;
+    opacity: .7;
+    color: #ffffff;
+    padding:50px 150px;
+
+  }
+  // width: 500px;
+  // margin: 100px auto 0;
 }
 </style>
