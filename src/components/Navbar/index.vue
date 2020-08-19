@@ -7,29 +7,29 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
-import { removeUserInfo } from '@/utils/auth';
+import { mapState } from 'vuex'
+import { removeUserInfo } from '@/utils/auth'
 export default {
   name: 'Navbar',
   components: {},
-  data() {
+  data () {
     return {
-    };
+    }
   },
   computed: {
     ...mapState({
       userInfo: state => state.auth.userInfo
     })
   },
-  mounted() {},
+  mounted () {},
   methods: {
-    logOut() {
+    logOut () {
       removeUserInfo().then(_ => {
-        this.$router.push('/login');
-      });
+        this.$router.push('/login')
+      })
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 // .nav-header{

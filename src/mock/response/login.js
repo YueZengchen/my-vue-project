@@ -1,5 +1,5 @@
 // import Mock from 'mockjs';
-import loginData from './loginData';
+import loginData from './loginData'
 // const parseQueryString = url => {
 //   var json = {};
 //   var arr = url.substr(url.indexOf('?') + 1).split('&');
@@ -10,14 +10,14 @@ import loginData from './loginData';
 //   return json;
 // };
 export const logIn = (requestParams) => {
-  let loginInfo = false;
-  const params = JSON.parse(requestParams.body);
+  let loginInfo = false
+  const params = JSON.parse(requestParams.body)
   for (let i = 0; i < loginData.length; i++) {
-    const item = loginData[i];
+    const item = loginData[i]
     if (params.userName === item.userName && params.passWord === item.passWord) {
-      loginInfo = item;
-      break;
+      loginInfo = item
+      break
     }
   }
-  return loginInfo;
-};
+  return loginInfo
+}

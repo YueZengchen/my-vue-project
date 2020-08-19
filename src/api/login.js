@@ -1,2 +1,2 @@
-import { post } from '@/utils/request';
-export const login = params => post('/login', params);
+import { post } from '@/utils/request'
+export const login = params => post('/login', params)

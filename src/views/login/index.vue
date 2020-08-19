@@ -18,12 +18,12 @@
 
 </template>
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from 'vuex'
 
 export default {
   name: 'Login',
   components: {},
-  data() {
+  data () {
     return {
       loginForm: {
         userName: '',
@@ -33,31 +33,31 @@ export default {
         userName: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
         passWord: [{ required: true, message: '请输入密码', trigger: 'blur' }]
       }
-    };
+    }
   },
   computed: {},
-  mounted() {},
+  mounted () {},
   methods: {
     ...mapActions({
       login: 'auth/login'
     }),
-    onLogin() {
+    onLogin () {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
-          const params = this.loginForm;
+          const params = this.loginForm
           this.login(params).then(_ => {
             // 登录成功回调
-            this.$router.push('/dashboard');
+            this.$router.push('/dashboard')
           }).catch(error => {
-            throw new Error(error);
-          });
+            throw new Error(error)
+          })
         } else {
-          return false;
+          return false
         }
-      });
+      })
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .container{

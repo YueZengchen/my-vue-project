@@ -17,4 +17,4 @@ export default [
     sex: 'man',
     age: 20
   }
-];
+]
