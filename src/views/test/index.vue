@@ -10,32 +10,32 @@
 export default {
   name: '',
   components: {},
-  data() {
+  data () {
     return {
       arr: [1, 2, 3, 4, 5]
-    };
+    }
   },
   computed: {},
-  mounted() {
-    var nameEle = document.getElementById('name');
-    var textEle = document.getElementById('text');
-    var obj = {};
+  mounted () {
+    var nameEle = document.getElementById('name')
+    var textEle = document.getElementById('text')
+    var obj = {}
     Object.defineProperty(obj, 'name', {
       enumerable: true,
       configurable: true,
-      get: function() {
-        return textEle.value;
+      get: function () {
+        return textEle.value
       },
-      set: function(newName) {
-        textEle.innerText = newName;
+      set: function (newName) {
+        textEle.innerText = newName
       }
-    });
-    nameEle.onkeyup = function() {
-      obj.name = event.target.value;
-    };
-    obj.name = 6;
+    })
+    nameEle.onkeyup = function () {
+      obj.name = event.target.value
+    }
+    obj.name = 6
   }
-};
+}
 </script>
 <style scoped lang="scss">
 </style>

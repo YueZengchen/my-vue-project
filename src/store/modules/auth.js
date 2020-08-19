@@ -1,40 +1,40 @@
-import { login } from '@/api/login';
-import { getUserInfo, setUserInfo } from '@/utils/auth';
+import { login } from '@/api/login'
+import { getUserInfo, setUserInfo } from '@/utils/auth'
 // 带命名空间的模块
 const state = {
   userInfo: getUserInfo() == null ? null : JSON.parse(getUserInfo())
-};
+}
 
 const mutations = {
   SET_USERINFO: (state, userInfo) => {
-    state.userInfo = userInfo;
+    state.userInfo = userInfo
   }
-};
+}
 
 const actions = {
-  login({ commit }, params) {
+  login ({ commit }, params) {
     return new Promise((resolve, reject) => {
       login(params).then(response => {
         if (!response) {
-          reject('登陆失败');
+          reject(new Error('登陆失败'))
         }
         // 登录成功回调 存储用户信息
-        commit('SET_USERINFO', response);
-        setUserInfo(response);
-        resolve();
+        commit('SET_USERINFO', response)
+        setUserInfo(response)
+        resolve()
       }).catch(error => {
-        reject(error);
-      });
-    });
+        reject(error)
+      })
+    })
   },
-  logout({ commit }) {
-    commit('SET_USERINFO', null);
+  logout ({ commit }) {
+    commit('SET_USERINFO', null)
   }
-};
+}
 
 export default {
   namespaced: true,
   state,
   mutations,
   actions
-};
+}

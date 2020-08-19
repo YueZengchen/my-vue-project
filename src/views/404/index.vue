@@ -1,20 +1,18 @@
 <template>
-  <div>
-    404 Not Fond
-  </div>
+  <div>404 Not Fond</div>
 </template>
 <script>
 export default {
   name: '',
   components: {},
-  data() {
-    return {
-    };
+  data () {
+    return {}
   },
   computed: {},
-  mounted() {},
+  mounted () {
+    console.log(111)
+  },
   methods: {}
-};
+}
 </script>
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

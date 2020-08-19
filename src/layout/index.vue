@@ -15,24 +15,24 @@
   </el-container>
 </template>
 <script>
-import { mapState } from 'vuex';
-import Navbar from '@/components/Navbar';
+import { mapState } from 'vuex'
+import Navbar from '@/components/Navbar'
 
 export default {
   name: '',
   components: { Navbar },
-  data() {
+  data () {
     return {
-    };
+    }
   },
   computed: {
     ...mapState({
       userInfo: state => state.auth.userInfo
     })
   },
-  mounted() {},
+  mounted () {},
   methods: {}
-};
+}
 </script>
 <style scoped lang="scss">
 .nav-header{
