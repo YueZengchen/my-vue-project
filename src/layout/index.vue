@@ -21,7 +21,7 @@ import Navbar from '@/components/Navbar'
 export default {
   name: '',
   components: { Navbar },
-  data () {
+  data() {
     return {
     }
   },
@@ -30,7 +30,7 @@ export default {
       userInfo: state => state.auth.userInfo
     })
   },
-  mounted () {},
+  mounted() {},
   methods: {}
 }
 </script>

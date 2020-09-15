@@ -10,27 +10,27 @@
 export default {
   name: '',
   components: {},
-  data () {
+  data() {
     return {
       arr: [1, 2, 3, 4, 5]
     }
   },
   computed: {},
-  mounted () {
+  mounted() {
     var nameEle = document.getElementById('name')
     var textEle = document.getElementById('text')
     var obj = {}
     Object.defineProperty(obj, 'name', {
       enumerable: true,
       configurable: true,
-      get: function () {
+      get: function() {
         return textEle.value
       },
-      set: function (newName) {
+      set: function(newName) {
         textEle.innerText = newName
       }
     })
-    nameEle.onkeyup = function () {
+    nameEle.onkeyup = function() {
       obj.name = event.target.value
     }
     obj.name = 6

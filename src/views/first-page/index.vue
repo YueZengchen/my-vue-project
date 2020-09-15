@@ -6,14 +6,14 @@
       name="改变name1"
       value="改变name1"
       @click="changeName"
-    />
+    >
     <input
       id="121212121212"
       type="button"
       name="改变name2"
       value="改变name2"
       @click="changeName2"
-    />
+    >
   </div>
 </template>
 <script>
@@ -21,18 +21,18 @@ import { mapState, mapActions } from 'vuex'
 export default {
   name: '',
   components: {},
-  data () {
+  data() {
     return {}
   },
   computed: {
     ...mapState(['name']),
-    info () {
+    info() {
       return process
       // return process.env.NODE_ENV;
     }
   },
-  mounted () {
-    function Star (name, age) {
+  mounted() {
+    function Star(name, age) {
       this.name = name
       this.age = age
     }
@@ -62,13 +62,13 @@ export default {
     ...mapActions({
       setname: 'user/setname'
     }),
-    changeName () {
+    changeName() {
       this.setname('yuezengchen')
     },
-    changeName2 () {
+    changeName2() {
       this.$store.dispatch('user/setname', 'zhangfei')
     },
-    testFn () {
+    testFn() {
       const a = { a: 1 }
       a.a = 2
     }

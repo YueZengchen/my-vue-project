@@ -1,14 +1,14 @@
-'use strict';
-const path = require('path');
-const defaultSettings = require('./src/settings.js');
+'use strict'
+const path = require('path')
+const defaultSettings = require('./src/settings.js')
 
 function resolve(dir) {
-  return path.join(__dirname, dir);
+  return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || 'yzc Vue Project'; // page title
+const name = defaultSettings.title || 'yzc Vue Project' // page title
 
-const port = process.env.port || process.env.npm_config_port || 4321;
+const port = process.env.port || process.env.npm_config_port || 4321
 
 /*
   这是一份vue.config.js配置文件&配置教程 这里也建议直接查看官方文档学习
@@ -62,7 +62,7 @@ module.exports = {
             // `runtime` must same as runtimeChunk name. default is `runtime`
             inline: /runtime\..*\.js$/
           }])
-          .end();
+          .end()
         config
           .optimization.splitChunks({
             chunks: 'all',
@@ -86,10 +86,10 @@ module.exports = {
                 reuseExistingChunk: true
               }
             }
-          });
-        config.optimization.runtimeChunk('single');
+          })
+        config.optimization.runtimeChunk('single')
       }
-    );
+    )
   },
   css: {
     // type: boolean || Object default: 生产环境下true,开发环境下false
@@ -113,4 +113,4 @@ module.exports = {
     }
   }
 
-};
+}

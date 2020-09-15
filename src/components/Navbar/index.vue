@@ -12,7 +12,7 @@ import { removeUserInfo } from '@/utils/auth'
 export default {
   name: 'Navbar',
   components: {},
-  data () {
+  data() {
     return {
     }
   },
@@ -21,9 +21,9 @@ export default {
       userInfo: state => state.auth.userInfo
     })
   },
-  mounted () {},
+  mounted() {},
   methods: {
-    logOut () {
+    logOut() {
       removeUserInfo().then(_ => {
         this.$router.push('/login')
       })

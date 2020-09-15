@@ -1,12 +1,18 @@
-import { getUserInfo } from '@/utils/auth';
-import Vue from 'vue';
-import Router from 'vue-router';
-Vue.use(Router);
+import { getUserInfo } from '@/utils/auth'
+import Vue from 'vue'
+import Router from 'vue-router'
+import Layout from '@/layout'
+Vue.use(Router)
 
 export const route = [
   {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login')
+  },
+  {
     path: '/',
-    component: () => import('@/layout'),
+    component: Layout,
     redirect: '/dashboard',
     children: [
       {
@@ -21,11 +27,7 @@ export const route = [
       // }
     ]
   },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import('@/views/login')
-  },
+
   {
     path: '/404',
     name: 'test',
@@ -35,18 +37,19 @@ export const route = [
     path: '*',
     redirect: '/404'
   }
-];
-const createRouter = () => new Router({
-  mode: 'history',
-  routes: route
-});
+]
+const createRouter = () =>
+  new Router({
+    mode: 'history',
+    routes: route
+  })
 
-const router = createRouter();
+const router = createRouter()
 router.beforeEach((to, from, next) => {
   if (getUserInfo() == null && to.path !== '/login') {
-    next(`/login?redirect=${to.path}`);
+    next(`/login?redirect=${to.path}`)
   }
-  next();
-});
+  next()
+})
 
-export default router;
+export default router

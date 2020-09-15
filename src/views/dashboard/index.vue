@@ -5,11 +5,11 @@
 export default {
   name: '',
   components: {},
-  data () {
+  data() {
     return {}
   },
   computed: {},
-  mounted () {
+  mounted() {
     console.log(111)
     console.log(222)
   },

@@ -12,7 +12,7 @@ const mutations = {
 }
 
 const actions = {
-  login ({ commit }, params) {
+  login({ commit }, params) {
     return new Promise((resolve, reject) => {
       login(params).then(response => {
         if (!response) {
@@ -27,7 +27,7 @@ const actions = {
       })
     })
   },
-  logout ({ commit }) {
+  logout({ commit }) {
     commit('SET_USERINFO', null)
   }
 }
